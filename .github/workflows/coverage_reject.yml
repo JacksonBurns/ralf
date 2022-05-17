@@ -17,7 +17,7 @@ jobs:
           python -m pip install coverage
       - name: Run Tests
         run: |
-          coverage run --source=. --omit=astartes/__init__.py,setup.py,test/*,astartes/samplers/sampler.py -m unittest discover -v
+          coverage run --source=. --omit=ralf/__init__.py,setup.py,test/* -m unittest discover
       - name: Show Coverage
         run: |
           coverage report -m > temp.txt
@@ -35,7 +35,7 @@ jobs:
 
       - name: Request Changes via Review
         if: ${{ env.COVERAGE_PERCENT < 90 }}
-        uses: andrewmusgrave/automatic-pull-request-review@0.0.5
+        uses: Ana06/automatic-pull-request-review@v0.1.0
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           event: REQUEST_CHANGES
@@ -43,7 +43,7 @@ jobs:
   
       - name: Approve PR if Coverage Sufficient
         if: ${{ env.COVERAGE_PERCENT > 89 }}
-        uses: andrewmusgrave/automatic-pull-request-review@0.0.5
+        uses: Ana06/automatic-pull-request-review@v0.1.0
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           event: APPROVE
