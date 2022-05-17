@@ -2,12 +2,12 @@ import os
 import sys
 import unittest
 
-# from blankpythonproject import blankpythonproject
+# from ralf import ralf
 
 
-class Test_blankpythonproject(unittest.TestCase):
+class Test_ralf(unittest.TestCase):
     """
-    Test the various functionalities of blankpythonproject.
+    Test the various functionalities of ralf.
     """
 
     @classmethod

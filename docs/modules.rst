@@ -1,10 +1,10 @@
-blank-python-project
+ralf
 ====================
 
 .. toctree::
    :maxdepth: 4
 
-   blankpythonproject
+   ralf
    setup
    start_project
    test
