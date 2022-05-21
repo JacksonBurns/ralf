@@ -1,5 +1,4 @@
 import os
-import sys
 import unittest
 
 from ralf import get_rotation_limit
