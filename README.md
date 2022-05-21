@@ -1,14 +1,6 @@
 # ralf
-## Using this template:
-1. Run `start_project.py`, which will gather some info and rename everything.
-2. Add tests.
-3. Add your source code to your source directory.
-4. Add your requirements to `./requirements.txt`.
-5. Curate examples as python notebooks and add them to `./examples/`.
-6. Replace `./ralf_logo.png` with your logo.
-7. Delete this line and everything above it, as well as `start_project.py`.
 
-<h1 align="center">BlankPythonProject</h1> 
+<h1 align="center">ralf</h1> 
 <h3 align="center">Rotation Angle Limit Finder</h3>
 
 <p align="center">  
@@ -23,3 +15,24 @@
 
 ## Online Documentation
 [Click here to read the documentation](https://JacksonBurns.github.io/ralf/)
+
+## Usage
+`ralf` includes a single function `get_rotation_limit`, which can be imported and used as shown below:
+```
+from ralf import get_rotation_limit
+
+limit = get_rotation_limit(
+  r"test/data/segphos.pdb",
+  23,
+  6,
+  cutoff_distance=1.8,
+)
+```
+
+Arguments are as follows:
+ - pdb_path (str): PDB file for molecule.
+ - axis_atom_1 (int): ID of first atom bound in chiral axis.
+ - axis_atom_2 (int): ID of second atom bound in chiral axis.
+ - cutoff_distance (float, optional): Distance considered overlapping, in Angstrom. Defaults to 1.6.
+
+`get_rotation_limit` returns the maximum rotation angle in degrees.
