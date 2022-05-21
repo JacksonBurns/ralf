@@ -26,7 +26,7 @@ cwd = pathlib.Path(__file__).parent
 README = (cwd / "README.md").read_text()
 
 setup(
-    name="test pypi_name",
+    name="ralf",
     version=get_version("ralf/__init__.py"),
     description="Rotation Angle Limit Finder",
     long_description=README,
