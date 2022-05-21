@@ -113,11 +113,12 @@ class Test_ralf(unittest.TestCase):
 
     def test_unbonded_atom_ids(self):
         """wrong atoms for tolbinap ligand"""
-        get_rotation_limit(
-            self._tolbinap_pdb,
-            16,
-            26,
-        )
+        with self.assertRaises(RuntimeError):
+            get_rotation_limit(
+                self._tolbinap_pdb,
+                16,
+                26,
+            )
 
 
 if __name__ == "__main__":
