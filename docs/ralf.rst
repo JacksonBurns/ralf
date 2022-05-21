@@ -1,13 +1,13 @@
-test package
+ralf package
 ============
 
 Submodules
 ----------
 
-test.test\_ralf module
-----------------------
+ralf.ralf module
+----------------
 
-.. automodule:: test.test_ralf
+.. automodule:: ralf.ralf
    :members:
    :undoc-members:
    :show-inheritance:
@@ -15,7 +15,7 @@ test.test\_ralf module
 Module contents
 ---------------
 
-.. automodule:: test
+.. automodule:: ralf
    :members:
    :undoc-members:
    :show-inheritance:
