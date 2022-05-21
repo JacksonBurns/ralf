@@ -1,4 +1,3 @@
-import os
 import math
 
 import scoria
@@ -31,7 +30,11 @@ def get_rotation_limit(
     maxrotation = 0
 
     # load the molecule
-    mol = scoria.Molecule(pdb_path)
+    mol = scoria.Molecule()
+    mol.load_pdb_trajectory_into(
+        pdb_path,
+        bonds_by_distance=False,
+    )
 
     # get coordinates
     coords = mol.get_coordinates()
@@ -126,6 +129,9 @@ def get_rotation_limit(
     maxrotation -= rot
 
     if maxrotation > 180:
-        raise RuntimeError("Rotation around indicated bond is unrestricted.")
+        raise RuntimeError(
+            f"""Rotation around indicated bond is unrestricted,
+            consider increasing cutoff_distance above {cutoff_distance}."""
+        )
     else:
         return maxrotation
