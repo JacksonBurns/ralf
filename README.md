@@ -1,5 +1,3 @@
-# ralf
-
 <h1 align="center">ralf</h1> 
 <h3 align="center">Rotation Angle Limit Finder</h3>
 
