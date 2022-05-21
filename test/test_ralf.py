@@ -75,7 +75,7 @@ class Test_ralf(unittest.TestCase):
             self._segphos_pdb,
             23,
             6,
-            cutoff_distance=1.4,
+            cutoff_distance=2.2,
         )
 
     def test_unrestricted_mol(self):
