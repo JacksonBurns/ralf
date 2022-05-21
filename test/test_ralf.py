@@ -36,6 +36,12 @@ class Test_ralf(unittest.TestCase):
             "data",
             "tolbinap.pdb",
         )
+        self._ethane_pdb = os.path.join(
+            os.getcwd(),
+            "test",
+            "data",
+            "ethane.pdb",
+        )
 
     def test_knipholone(self):
         """knipholone natrual product"""
@@ -81,13 +87,37 @@ class Test_ralf(unittest.TestCase):
     def test_unrestricted_mol(self):
         """non-atropisomer should raise an error"""
         with self.assertRaises(RuntimeError):
-            raise RuntimeError
+            get_rotation_limit(
+                self._ethane_pdb,
+                1,
+                2,
+            )
 
-    def test_nonexistent_atom_ids(self):
-        pass
+    def test_nonexistent_atom_1_id(self):
+        """Bad ID for atom 1 error"""
+        with self.assertRaises(RuntimeError):
+            get_rotation_limit(
+                self._tolbinap_pdb,
+                1001,
+                26,
+            )
+
+    def test_nonexistent_atom_2_id(self):
+        """Bad ID for atom 2 error"""
+        with self.assertRaises(RuntimeError):
+            get_rotation_limit(
+                self._tolbinap_pdb,
+                10,
+                260,
+            )
 
     def test_unbonded_atom_ids(self):
-        pass
+        """wrong atoms for tolbinap ligand"""
+        get_rotation_limit(
+            self._tolbinap_pdb,
+            16,
+            26,
+        )
 
 
 if __name__ == "__main__":
